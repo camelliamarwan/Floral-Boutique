@@ -1,0 +1,27 @@
+@use 'variables' as *;
+
+.footer {
+  background: $brown-dark;
+  padding: 3rem 2rem;
+  text-align: center;
+
+  &-logo {
+    font-family: $font-heading;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #e8a87c;
+    margin-bottom: 0.75rem;
+  }
+
+  &-contact {
+    font-size: 0.88rem;
+    color: #c4a090;
+    margin-bottom: 0.5rem;
+  }
+
+  &-copy {
+    font-size: 0.78rem;
+    color: #8a6858;
+    margin-top: 0.75rem;
+  }
+}

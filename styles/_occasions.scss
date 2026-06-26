@@ -1,0 +1,33 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.occasions {
+  background: $white;
+  padding: 4rem 2.5rem;
+  border-bottom: 1px solid $border;
+
+  &-grid {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &-card {
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    border-radius: 50px;
+    border: 1px solid $border;
+    background: $cream;
+    font-size: 0.88rem;
+    color: $text-muted;
+    font-family: $font-body;
+    transition: all $transition;
+
+    &:hover {
+      background: $terracotta;
+      color: $white;
+      border-color: $terracotta;
+    }
+  }
+}

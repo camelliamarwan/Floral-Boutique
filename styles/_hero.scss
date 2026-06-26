@@ -1,0 +1,113 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.hero {
+  @include flex-between;
+  padding: 1rem 2.5rem 3rem;
+  background: $cream;
+  min-height: 300px;
+  overflow: hidden;
+  position: relative;
+
+  
+  &::before {
+    content: '';
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: $cream-dark;
+    opacity: 0.7;
+    bottom: -60px;
+    left: -70px;
+  }
+
+  
+  &::after {
+    content: '';
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: $cream-dark;
+    opacity: 0.5;
+    top: -60px;
+    right: 80px;
+  }
+
+  &-content {
+    flex: 1;
+    max-width: 520px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &-tag {
+    display: block;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: $text-muted;
+    margin-bottom: 1rem;
+  }
+
+  &-title {
+    font-family: $font-heading;
+    font-size: 3.2rem;
+    color: $brown-dark;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+
+    
+    span {
+      color: $terracotta;
+      display: block;
+    }
+  }
+
+  &-desc {
+    font-size: 0.95rem;
+    color: $text-muted;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 400px;
+  }
+
+  &-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  &-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+
+    img { width: 420px; max-width: 100%; }
+  }
+
+  
+  @include respond-to(tablet) {
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 1.5rem;
+
+    &-content { max-width: 100%; }
+    &-desc    { max-width: 100%; }
+    &-actions { justify-content: center; }
+    &-title   { font-size: 2.4rem; }
+
+    &-image {
+      justify-content: center;
+      margin-top: 2rem;
+      img { width: 260px; }
+    }
+  }
+
+  @include respond-to(mobile) {
+    &-title { font-size: 2rem; }
+  }
+}

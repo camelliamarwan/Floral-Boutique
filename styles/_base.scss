@@ -1,0 +1,59 @@
+@use 'variables' as *;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: $font-body;
+  background: $white;
+  color: $brown-dark;
+  overflow-x: hidden;
+}
+
+a    { text-decoration: none; color: inherit; }
+ul   { list-style: none; }
+img  { max-width: 100%; display: block; }
+
+
+.section-tag {
+  display: block;
+  text-align: center;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: $text-muted;
+  margin-bottom: 0.5rem;
+}
+
+
+.btn-primary {
+  display: inline-block;
+  background: $terracotta;
+  color: $white;
+  padding: 0.75rem 1.75rem;
+  border: none;
+  border-radius: 50px;
+  font-family: $font-body;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background $transition;
+  &:hover { background: $terracotta-dark; }
+}
+
+.btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: $terracotta;
+  padding: 0.73rem 1.75rem;
+  border: 2px solid $terracotta;
+  border-radius: 50px;
+  font-family: $font-body;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: $transition;
+  &:hover { background: $terracotta; color: $white; }
+}

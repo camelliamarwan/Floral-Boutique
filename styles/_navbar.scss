@@ -1,0 +1,45 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.navbar {
+  @include flex-between;
+  padding: 1.1rem 2.5rem;
+  background: $white;
+  border-bottom: 1px solid $border;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  &-logo {
+    font-family: $font-heading;
+    font-size: 1.3rem;
+    color: $brown-dark;
+    font-style: italic;
+  }
+
+  &-links {
+    @include flex-center;
+    gap: 2.5rem;
+
+    a {
+      font-size: 0.9rem;
+      color: $text-muted;
+      transition: color $transition;
+      &:hover { color: $terracotta; }
+    }
+
+    
+    @include respond-to(tablet) { display: none; }
+  }
+
+  &-cta {
+    background: $terracotta;
+    color: $white;
+    padding: 0.6rem 1.4rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-family: $font-body;
+    transition: background $transition;
+    &:hover { background: $terracotta-dark; }
+  }
+}
